@@ -8,7 +8,7 @@ from datetime import datetime, timedelta
 import db
 import auth
 import styles
-from pages_ui import page_stock, page_movement, page_manage, page_logs
+import page_stock, page_movement, page_manage, page_logs
 
 st.set_page_config(page_title="WMS — Warehouse Manager", layout="wide", page_icon="📦")
 
