@@ -35,10 +35,9 @@ def show_contact_admin():
 
 
 def show_login_page():
-    load_login_css()
-
     col_left, col_right = st.columns([1, 1])
-
+    load_login_css()
+    
     with col_left:
         st.markdown("""
             <div style="height:90vh; background:#0d1117;
