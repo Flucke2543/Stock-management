@@ -4,35 +4,25 @@
 import streamlit as st
 from styles import load_login_css, load_dialog_css
 
-
 @st.dialog("กู้คืนรหัสผ่าน")
 def show_contact_admin():
-    load_dialog_css()
     st.markdown("""
-        <div style="text-align:center; padding: 8px 0;">
-            <div style="font-family:'Rajdhani',sans-serif; font-size:1.4rem;
-                        font-weight:600; color:#e6edf3; letter-spacing:1px;
-                        margin-bottom:16px;">
-                ติดต่อผู้ดูแลระบบ
+        <style>div[data-testid="stDialog"] div[role="dialog"] {background-color: #f8e2b0 !important; /* สีทรายที่คุณต้องการ */}
+        div[data-testid="stDialog"] h1, div[data-testid="stDialog"] p {color: #000000 !important; /* สีหัวข้อ */}
+        button[aria-label="Close"] {background-color: transparent !important; /* เอาสีเขียวออก */color: #000000 !important; border: none !important; /* เปลี่ยนกากบาทเป็นสีดำ */}
+        </style>""", unsafe_allow_html=True)
+    st.markdown("""
+        <div style='text-align: center; font-family: "Saira", sans-serif;'>
+            <h3 style='color: #000; font-size:40px ;'>กรุณาติดต่อแอดมินเพื่อขอรหัสผ่าน</h3>
+            <div style='background-color: #eef3ec; padding: 20px; border-radius: 15px; border: 1px dashed #ffffff; margin: 15px 0;'>
+                <p style='margin-bottom: 5px; font-size: 30px;  color: #1E1E1E ;'>อีเมลติดต่อ:</p>
+                <h4 style='color: #000;'>Poonawitmuenwat@gmail.com</h4>
             </div>
-            <div style="background:#0d1117; border:1px solid #30363d;
-                        border-left: 3px solid #00ff87;
-                        border-radius:8px; padding:18px; margin:12px 0; text-align:left;">
-                <div style="font-size:0.7rem; letter-spacing:2px; color:#7d8590;
-                            text-transform:uppercase; margin-bottom:6px;">อีเมลแอดมิน</div>
-                <div style="font-family:'JetBrains Mono',monospace; color:#00ff87;
-                            font-size:0.95rem;">
-                    Poonawitmuenwat@gmail.com
-                </div>
-            </div>
-            <div style="color:#7d8590; font-size:0.82rem; margin-top:12px;">
-                โปรดระบุชื่อผู้ใช้งานและแผนกของคุณเมื่อติดต่อ
-            </div>
+            <p style='font-size: 13px; font-size:25px  color: #ffffff;'>โปรดระบุชื่อผู้ใช้งานและแผนกของคุณเมื่อติดต่อ</p>
         </div>
     """, unsafe_allow_html=True)
-    if st.button("ปิด", use_container_width=True):
+    if st.button("ตกลง", use_container_width=True):
         st.rerun()
-
 
 def show_login_page():
     col_left, col_right = st.columns([1, 1])
